@@ -1,0 +1,22 @@
+{
+    "name": "senior-fe-exam",
+    "version": "1.0.0",
+    "description": "This exam is for frontend development",
+    "main": "index.html",
+    "devDependencies": {
+        "browser-sync": "^3.0.4",
+        "concurrently": "^9.1.2",
+        "sass": "^1.89.2"
+    },
+    "scripts": {
+        "sass": "sass --watch style.scss main.css",
+        "bs": "node bs-config.js",
+        "dev": "concurrently \"npm run sass\" \"npm run bs\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "font-awesome": "^4.7.0"
+    }
+}
