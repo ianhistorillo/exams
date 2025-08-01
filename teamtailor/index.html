@@ -4,22 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Senior FE Exam </title>
-    <link rel="stylesheet" href="main.css"  />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://kit.fontawesome.com/e137f2f514.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
         <div class="fruit-wrapper">
+            <h1 class="title"> Fruit Prices </h1>
             <ul class="fruits">
-                <li id="apple">
+                <li id="apple" class="active">
+                    <span class="name"><i class="fa-brands fa-apple" style="color: #ff0000;"></i>Apple </span>
                     <span class="price">$1.50</span>
                 </li>
                 <li id="carrot">
+                    <span class="name"><i class="fa-solid fa-carrot" style="color: #ffae00;"></i>Carrot </span>
                     <span class="price">$3.12</span>
                 </li>
-                <li id="lemon">
+                <li id="lemon" class="active">
+                    <span class="name"><i class="fa-solid fa-lemon" style="color: #FFD43B;"></i>Lemon </span>
                     <span class="price">$1.02</span>
                 </li>
                 <li id="pepper">
+                    <span class="name"><i class="fa-solid fa-pepper-hot" style="color: #16a240;"></i>Pepper </span>
                     <span class="price">$2.12</span>
                 </li>
             </ul>
@@ -33,8 +39,8 @@
                 In turpis purus, tristique id tellus quis, tempus eleifend lacus.
             </p>
         </div>
-        <footer>
-            Copyright @ 2019 Fruits, Inc
+        <footer class="footer">
+            <p>Copyright @ 2019 Fruits, Inc</p>
         </footer>
     </div>
   </body>

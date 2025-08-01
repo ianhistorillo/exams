@@ -1,7 +1,225 @@
+@import "media_query.scss";
 @import "layout.scss";
 @import "fonts.scss";
 
 body {
-    background-image: url('/assets/pexels-photo-796580.jpeg');
-    background-color: red
+    padding: 0;
+    margin: 0;
 }
+
+.container {
+    position: relative;
+    background-image: url('/assets/pexels-photo-796580.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 70% 20% 10%;
+
+    @include mobile-lg {
+        .info {
+            display: none;
+        }
+        grid-template-rows: 92% 8%;
+    }
+
+    /* Pseudo-element for white overlay */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.4); /* semi-transparent white */
+        z-index: 1;
+    }
+    
+    /* Content stays above the overlay */
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    .fruit-wrapper {
+        background-color: white;
+        width: 30%;
+        margin: auto;
+        text-align: center;
+        border: 4px dashed black;
+
+        @include desktop-sm {
+            width: 60%;
+        }
+
+        @include tablet-lg {
+            width: 60%;
+        }
+
+        @include mobile-lg {
+            width: 98%;
+            margin-top: 10%;
+
+        }
+        
+        h1.title {
+            @include lato-extrabold;
+            font-size: 2vw;
+            text-transform: uppercase;
+            margin: auto;
+            font-style: italic;
+            padding: 0;
+            color: rgb(35, 84, 245);
+
+            @include desktop-sm {
+                font-size: 4.5vw;
+            }
+
+            @include tablet-lg {
+                font-size: 4.5vw;
+            }
+
+            @include mobile-lg {
+                font-size: 7vw;
+            }
+        }
+
+        ul {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            
+            li {
+                list-style-type: none;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 1rem;
+                padding-right: 1.5rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                @include mobile-lg {
+                    padding-left: 1rem;
+                    padding-right: 1.5rem;
+                }
+
+                i {
+                    margin-right: 10px;
+                }
+
+                span.name {
+                    @include lato-bold;
+                    font-size: 1.5vw;
+
+                    @include desktop-sm {
+                        font-size: 2.5vw;
+                    }
+
+                    @include tablet-lg {
+                        font-size: 2.5vw;
+                    }
+
+                    @include mobile-lg {
+                        font-size: 4.5vw;
+                    }
+                }
+
+                span.price {
+                    @include lato-light;
+                    font-size: 1.5vw;
+
+                    @include desktop-sm {
+                        font-size: 2.5vw;
+                    }
+
+                    @include tablet-lg {
+                        font-size: 2.5vw;
+                    }
+
+                    @include mobile-lg {
+                        font-size: 4.5vw;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #ff0000;
+                    color: white;
+                    .fa-solid {
+                        color: lightgrey !important;
+                    }
+                }
+
+                &.active {
+                    background-color: black;
+                    color: white;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(35, 84, 245);
+                        .fa-brands {
+                            color: black !important;
+                        }
+                        .fa-solid {
+                            color: black !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .info {
+        background-color: lightgrey;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        p {
+            @include lato-regular;
+            font-size: 1.5vw;
+
+            @include desktop-sm {
+                font-size: 2.5vw;
+            }
+
+            @include tablet-lg {
+                font-size: 2.5vw;
+            }
+        }
+    }
+
+    .footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include lato-light;
+        font-size: 1.5vw;
+
+        @include desktop-sm {
+            font-size: 2.5vw;
+        }
+
+        @include tablet-lg {
+            font-size: 2.5vw;
+        }
+
+        @include mobile-lg {
+            font-size: 4.5vw;
+        }
+    }
+
+}
+
